@@ -3,6 +3,7 @@ import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom'
 import TodoList from './components/TodoList'
 import Login from './components/Login'
 import Sample from './components/Sample'
+import Signin from './assets/auth/Signin'
 // import { useNavigate } from 'react-router-dom'
 
 
@@ -25,7 +26,8 @@ function App() {
     <Route path="/login" element={<Login setIsLoggedin={setIsLoggedin} />} />
     
     <Route path="/todolist" element={isLoggedin ? <TodoList /> : <Navigate to="/login" />} />
-          
+
+     <Route path="/signin"  element={<Signin/>}/>  
        
         
         
