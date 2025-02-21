@@ -3,7 +3,17 @@ import { BrowserRouter,Routes,Route, Navigate } from 'react-router-dom'
 import TodoList from './components/TodoList'
 import Login from './components/Login'
 import Sample from './components/Sample'
+
 import Signin from './assets/auth/Signin'
+
+
+import SignUp from './assets/auth/SignUp'
+
+import Password from './assets/auth/Password';
+import Reset from './assets/auth/Reset';
+import Otp from './assets/auth/Otp';
+
+
 // import { useNavigate } from 'react-router-dom'
 
 
@@ -27,13 +37,22 @@ function App() {
     
     <Route path="/todolist" element={isLoggedin ? <TodoList /> : <Navigate to="/login" />} />
 
+
      <Route path="/signin"  element={<Signin/>}/>  
+          
+
+
+    <Route path ="/Password" element={<Password/>}></Route>
+       <Route path ="/Reset" element= {<Reset/>}></Route>
+       <Route path ="/Otp" element={<Otp/>}></Route>
        
         
         
          {/* Redirect unknown routes to /login or /todolist based on login status */}
     <Route path="*" element={<Navigate to={isLoggedin ? "/todolist" : "/login"} />} />
     <Route path="/sample" element={<Sample></Sample>} ></Route>
+
+    <Route path='/signup' element={<SignUp/>}/>
     </Routes>
 
     </BrowserRouter>
